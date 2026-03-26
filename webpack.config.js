@@ -30,4 +30,8 @@ export default {
             },
         ],
     },
+    devtool: "eval-source-map",
+    devServer: {
+        watchFiles: ["./src/template.html"],
+    },
 };
