@@ -4,7 +4,111 @@
     box-sizing: border-box;
 }
 
-.special-dish {
-    background-image: url("./assets/featured0.jpg");
-    height: 500px;
+body {
+    font-family: sans-serif;
+    font-size: clamp(16px, 3vw, 1.3rem);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.header {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.nav-btn {
+    font-size: clamp(16px, 3vw, 1.3rem);
+    background-color: #1a9ea2;
+    color: #ffffff;
+    border: none;
+    border-radius: 24px;
+    padding: 8px 16px;
+    box-shadow: 0px 0px 1px 2px #d7d7d7;
+    transition: transform 300ms ease-out;
+}
+
+.nav-btn:hover {
+    transform: scale(1.05);
+}
+
+section > img {
+    max-width: 100%;
+}
+
+.special-dish, .local-feature {
+    position: relative;
+    /* max-height: 90vh; */
+}
+
+.special-dish > p, .local-feature > p {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-weight: 700;
+    font-size: clamp(48px, 6vw, 4rem);
+    width: 500px;
+    color: #1a9ea2;
+}
+
+.local-feature > p {
+    right: 0;
+    left: 4px;
+    font-size: clamp(32px, 4vw, 3rem);
+    width: 300px;
+}
+
+.featured-foods {
+    display: flex;
+    gap: 16px;
+    flex-wrap: nowrap;
+    margin-top: 48px;
+    margin-bottom: 40vh;
+}
+
+.featured-food {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    width: 300px;
+    box-shadow: 0px 0px 1px 2px #d7d7d7;
+    transition: transform 300ms ease-out;
+}
+
+.featured-food:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.featured-food img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+}
+
+.food-detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.featured-food button {
+    background-color: #1a9ea2;
+    color: #ffffff;
+    font-size: clamp(16px, 3vw, 1.2rem);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border: none;
+    box-shadow: 0px 0px 1px 2px #d7d7d7;
 }
