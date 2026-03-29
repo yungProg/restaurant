@@ -24,14 +24,7 @@ export default class Homepage {
         parent.appendChild(childElement)
     }
 
-    #resetPage() {
-        this.#ancestor.textContent = ""
-    }
-
     renderHomepage() {
-        // clear display
-        this.#resetPage()    
-
         // create 3 main sections
         const mainSectionsObjects = [
             ["section", {class: "special-dish"}], ["section", {class: "local-feature"}]

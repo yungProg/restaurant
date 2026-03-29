@@ -6,7 +6,7 @@ export default class Menu {
     renderMenu() {
         const cuisinesDiv = document.createElement("div");
         cuisinesDiv.classList.add("cuisines")
-        
+
         this.#cuisines.forEach(cuisine => {
             const cuisineBtn = document.createElement("button");
             cuisineBtn.setAttribute("type", "button")

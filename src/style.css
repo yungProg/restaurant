@@ -1,3 +1,5 @@
+/* general styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -36,9 +38,19 @@ button:hover {
     transition: transform 300ms ease-out;
 }
 
+.nav-btn.active {
+    background-color: #adad01;
+}
+
 .nav-btn:hover {
     transform: scale(1.05);
 }
+
+h2 {
+    font-size: clamp(16px, 3vw, 1.2rem);
+}
+
+/* styles for homepage */
 
 section > img {
     max-width: 100%;
@@ -46,7 +58,6 @@ section > img {
 
 .special-dish, .local-feature {
     position: relative;
-    /* max-height: 90vh; */
 }
 
 .special-dish > p, .local-feature > p {
@@ -105,7 +116,7 @@ section > img {
     font-size: 14px;
 }
 
-.featured-food button {
+.featured-food button, .cuisines > button {
     background-color: #1a9ea2;
     color: #ffffff;
     font-size: clamp(16px, 3vw, 1.2rem);
@@ -113,4 +124,43 @@ section > img {
     padding-bottom: 4px;
     border: none;
     box-shadow: 0px 0px 1px 2px #d7d7d7;
+}
+
+/* styles for menu page */
+
+.cuisines {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    max-width: 400px;
+    gap: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 24px;
+}
+
+.cuisines > button {
+    padding: 8px;
+}
+
+/* contact us style */
+
+form {
+    background-color: #d2d0d0;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 16px auto auto auto;
+    padding: 24px 24px 50px 24px;
+}
+
+input, textarea, button[type="submit"] {
+    font-size: clamp(16px, 3vw, 1.2rem);
+    padding: 4px;
+}
+
+button[type="submit"] {
+    background-color: #1a9ea2;
+    margin-top: 8px;
+    border: 1px solid black;
 }
