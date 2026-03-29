@@ -34,7 +34,7 @@ export default class Homepage {
 
         // create 3 main sections
         const mainSectionsObjects = [
-            ["section", {class: "special-dish"}], ["section", {class: "local-feature"}],["section", {class: "featured-foods"}]
+            ["section", {class: "special-dish"}], ["section", {class: "local-feature"}]
         ]
         mainSectionsObjects.forEach(item => {
             const newElement = this.#createHTMLElement(item[0], item[1])
@@ -54,13 +54,66 @@ export default class Homepage {
             this.#appendToParent(`.${section}`, descendantElement)
             this.#appendToParent(`.${section}`, paragraph)
         }
+
+        // render featured foods
+        this.#renderFeaturedFoods()
     }
 
     #renderFeaturedFoods() {
         const featuredFoods = [
             {
-                
-            }
-        ]
+                name: "Eins essen",
+                price: "GH₵ 23.26",
+                image: eins,
+                alt: "Food one"
+            },
+            {
+                name: "Zwei essen",
+                price: "GH₵ 12.06",
+                image: zwei,
+                alt: "Food two"
+            },
+            {
+                name: "Drei essen",
+                price: "GH₵ 9.20",
+                image: drei,
+                alt: "Food three"
+            },
+            {
+                name: "Vier essen",
+                price: "GH₵ 19.99",
+                image: vier,
+                alt: "Food four"
+            },
+            {
+                name: "Funf essen",
+                price: "GH₵ 4.61",
+                image: funf,
+                alt: "Food five"
+            },
+        ];
+        const featuredFoodsDiv = this.#createHTMLElement("div", {class: "featured-foods"});        
+
+        featuredFoods.forEach(featuredFood => {
+            const featuredFoodDiv = this.#createHTMLElement("div", {class: "featured-food"});
+            const imgWrapperDiv = this.#createHTMLElement("div", {class: "img-wrapper"});
+            const img = this.#createHTMLElement("img", {src: featuredFood.image, alt: featuredFood.alt});
+            const foodDetailDiv = this.#createHTMLElement("div", {class: "food-detail"});
+            const foodNameP = this.#createHTMLElement("p");
+            foodNameP.textContent = featuredFood.name
+            const foodPriceP = this.#createHTMLElement("p");
+            foodPriceP.textContent = featuredFood.price
+            const orderButton = this.#createHTMLElement("button", {type: "button"});
+            orderButton.textContent = "Try out"
+
+            imgWrapperDiv.appendChild(img);
+            foodDetailDiv.appendChild(foodNameP);
+            foodDetailDiv.appendChild(foodPriceP);
+            featuredFoodDiv.appendChild(imgWrapperDiv);
+            featuredFoodDiv.appendChild(foodDetailDiv);
+            featuredFoodDiv.appendChild(orderButton);
+            featuredFoodsDiv.appendChild(featuredFoodDiv)
+        })
+        this.#ancestor.appendChild(featuredFoodsDiv)
     }
 }
